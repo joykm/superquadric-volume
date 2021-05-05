@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# number of threads:
+for  t  in  1 2 4 8 16 24
+do
+    # number of NUMNODES:
+    for s in  2 10 20 50 100 500 1000
+    do
+        g++ -DNUMT=$t -DNUMNODES=$s -o project2 project2.cpp -O3 -lm  -fopenmp
+        ./project2
+    done
+done
